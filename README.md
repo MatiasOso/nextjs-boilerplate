@@ -85,3 +85,38 @@ Estructura de carpetas.
 |-public En esta carpeta, se debe colocar el contenido estático para el sitio, y que puede ser descargado por los usuarios (imágenes,archivos, íconos, etc.). 
 
 En este repositorio, está el ejemplo para que puedas clonar, y modificar de acuerdo a tus requerimientos. 
+
+# Qué es ESLINT?
+Es una herramienta que permite analizar el código, y detectar errores de sintaxis, y de programación.
+Para instalarlo, debes abrir un terminal, y escribir el siguiente comando. 
+
+```dos
+npm install eslint --save-dev
+```
+
+Una vez instalado, debes inicializarlo, por medio del siguiente comando. 
+
+```dos
+npx eslint --init
+```
+
+El comando anterior, te hará una serie de preguntas, para configurar el archivo de configuración de eslint.
+
+Primero que todo, debes seleccionar el tipo de archivo que deseas analizar. En este caso, selecciona "Use a popular style guide", y presiona ENTER.
+Which framework does your project use? Selecciona "React", y presiona ENTER.
+para tailwindcss, selecciona "Javascript modules (import/export)", y presiona ENTER.
+en style guide, debes seleccionar "Airbnb", y presiona ENTER.
+What format for nextjs : Selecciona "JSON", y presiona ENTER.
+
+A continuación, para instalar prettier, el cual es un formateador de código, que permite darle un formato estándar al código, y que sea más fácil de leer. 
+
+```dos
+npm install --save-dev --save-exact prettier
+```
+
+Para finalizar, debes instalar el plugin de prettier para eslint, por medio del siguiente comando. 
+
+```dos
+npm install --save-dev eslint-plugin-prettier
+```
+
