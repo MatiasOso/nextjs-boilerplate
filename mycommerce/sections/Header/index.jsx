@@ -1,9 +1,11 @@
 import Logo from '@/components/Logo'
+import Menu from '@/components/Menu'
+import Search from '@/components/Search'
 const styles = {
   header: 'flex flex-row',
   logo: 'w-1/8 bg-green-200',
   menu: 'w-1/8 bg-blue-200',
-  search: 'w-full bg-red-100',
+  search: 'w-full bg-red-100 items-center align-center',
   buttons: 'w-1/5 bg-yellow-200',
 }
 
@@ -15,10 +17,10 @@ const index = () => {
             <Logo />
           </div>
           <div className={styles.menu}>
-            MENU
+            <Menu />
           </div>
           <div className={styles.search}>
-            SEARCH
+            <Search />
           </div>
           <div className={styles.buttons}>
             BUTTONS

@@ -9,11 +9,11 @@ const styles = {
 
 const Logo = ({data}) => {
   return (
-    <div>
-        <div className=""> <Image src='/assets/logo.svg' width={100} height={100} /> </div>
-        <div> 
-            <div> EMPRESA </div>
-            <div> SLOGAN </div>
+    <div className="flex flex-row p-4">
+        <div><Image src='/assets/logo.svg' width={120} height={120} alt='image' priority/> </div>
+        <div className="flex flex-col justify-center items-center"> 
+            <div className="text-xl font-black"> EMPRESA </div>
+            <div className="text-xs font-thin"> SLOGAN </div>
         </div>
     </div>
   )
