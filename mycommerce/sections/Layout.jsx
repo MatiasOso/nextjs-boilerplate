@@ -7,12 +7,13 @@ const Layout = () => {
         <>
             <Header />
             <main>
-                <div className='bg-green-50 centered-middle'>
+                <div className='flex flex-row'>
                 <Card>ESTO ES UNA TARJETA</Card>
                 <Card>ESTO ES UNA TARJETA</Card>
                 <Card>ESTO ES UNA TARJETA</Card>
                 <Card>ESTO ES UNA TARJETA</Card>
-                <Card>ESTO ES UNA TARJETA</Card></div>
+                <Card>ESTO ES UNA TARJETA</Card>
+                </div>
             </main>
             <Footer />
         </>

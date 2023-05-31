@@ -4,7 +4,7 @@ import Search from '@/components/Search'
 const styles = {
   header: 'flex flex-row',
   logo: 'w-1/8 bg-green-200',
-  menu: 'w-1/8 bg-blue-200',
+  menu: 'w-1/8 bg-blue-200 centered-middle',
   search: 'w-full bg-red-100 items-center align-center',
   buttons: 'w-1/5 bg-yellow-200',
 }

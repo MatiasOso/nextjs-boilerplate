@@ -1,9 +1,9 @@
 // A card maid with tailwindcss and nextjs
 const Card = ({ children }) => {
     return (
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full max-w-sm m-2 shadow-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img className="p-8 rounded-t-lg" src="/assets/product_mockup.jpg" alt="product image" />
+                <img className="rounded-lg border-6 p-6" src="/assets/product_mockup.jpg" alt="product image" />
             </a>
             <div className="px-5 pb-5">
                 <a href="#">
