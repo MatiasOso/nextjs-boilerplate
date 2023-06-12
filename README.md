@@ -120,3 +120,25 @@ Para finalizar, debes instalar el plugin de prettier para eslint, por medio del 
 npm install --save-dev eslint-plugin-prettier
 ```
 
+# Cómo instalar este proyecto
+1. Desde un terminal, clonar por medio de
+```bash
+git clone https://github.com/milescl/nextjs-boilerplate
+```
+
+2. Ingresar desde un terminal, a la carpeta del proyecto en la carpeta mycommerce, e instalar con npm 
+```bash`
+cd nextjs-boilerplate/mycommerce
+npm i -D
+``
+3. Cambia el nombre del archivo .env.example, por ```.env```
+Desde el archivo, modifica los parámetros de la base de datos. 
+```
+# MONGODB CREDENTIALS
+MONGODB_USERNAME = "USER"
+MONGODB_PASSWORD = "PASSWORD"
+MONGODB_HOST = "cloud.mongodb.example.com"
+MONGODB_PORT = "27017"
+MONGODB_DATABASE = "ecommerce"
+
+```
