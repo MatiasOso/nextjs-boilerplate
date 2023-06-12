@@ -1,6 +1,6 @@
 use('ecommerce');
 // Crceate new model for Category
-const category_model = {
+export const category_model = {
   _id: ObjectId("5f8b9a7b9b3b3b3b3b3b3b3b"),
   name: 'Electronics',
   description: 'Electronic Items',
@@ -55,6 +55,7 @@ const sub_category_model = {
 // Create a new model Product
 const product_model = {
   name: 'iPhone 7',
+  brand: 'Apple',
   price: 699,
   stock: 10,
   description: 'The latest iPhone, 7-inch screen, 128GB storage',

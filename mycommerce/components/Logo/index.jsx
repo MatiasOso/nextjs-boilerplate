@@ -1,4 +1,3 @@
-import { data } from "autoprefixer"
 import Image from "next/image"
 const styles = {
    container : {

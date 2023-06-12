@@ -1,12 +1,13 @@
 import Logo from '@/components/Logo'
 import Menu from '@/components/Menu'
 import Search from '@/components/Search'
+import NavButtons from '../NavButtons'
 const styles = {
   header: 'flex flex-row',
   logo: 'w-1/8 bg-green-200',
   menu: 'w-1/8 bg-blue-200 centered-middle',
-  search: 'w-full bg-red-100 items-center align-center',
-  buttons: 'w-1/5 bg-yellow-200',
+  search: 'w-full bg-red-100 centered-middle',
+  buttons: 'w-1/5 bg-yellow-200 centered-middle',
 }
 
 const index = () => {
@@ -23,7 +24,7 @@ const index = () => {
             <Search />
           </div>
           <div className={styles.buttons}>
-            BUTTONS
+            <NavButtons />
           </div>
         </div>
     </header>

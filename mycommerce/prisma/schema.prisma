@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model category {
+  idcategory  Int      @id @default(autoincrement())
+  name        String?  @unique(map: "name_UNIQUE") @db.VarChar(255)
+  description String?  @db.VarChar(255)
+  parent_id   Int?
+  created_at  Int?
+  updated_at  Int?
+  owner       String?  @db.VarChar(255)
+  is_active   Boolean?
+  is_deleted  Boolean?
+  images      String?  @db.LongText
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model products {
+  idproducts  Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  description String?   @db.LongText
+  price       Decimal?  @db.Decimal(10, 2)
+  stock       Int?
+  owner       String?   @db.VarChar(255)
+  image       String?   @db.VarChar(1000)
+  category_id String?   @db.VarChar(255)
+  tags_id     String?   @db.VarChar(255)
+  brand_id    String?   @db.VarChar(255)
+  dimensions  String?   @db.VarChar(255)
+  weight      Decimal?  @db.Decimal(10, 2)
+  features    Json?
+  barcode     String?   @db.VarChar(255)
+  created_at  DateTime? @db.DateTime(0)
+  update_at   DateTime? @db.DateTime(0)
+  deleted_at  DateTime? @db.DateTime(0)
+}
+
+model role {
+  idrole Int     @id @default(autoincrement())
+  name   String? @db.VarChar(255)
+}
+
+model user {
+  iduser        Int       @id
+  username      String?   @db.VarChar(255)
+  email         String?   @db.VarChar(255)
+  password      String?   @db.VarChar(255)
+  first_name    String?   @db.VarChar(255)
+  last_name     String?   @db.VarChar(255)
+  date_of_birth DateTime? @db.Date
+  created_at    DateTime? @db.DateTime(0)
+  update_at     DateTime? @db.DateTime(0)
+  is_active     Boolean?
+  is_admin      Boolean?
+}
+
+model user_role {
+  iduser_role Int  @id
+  role_id     Int?
+}
