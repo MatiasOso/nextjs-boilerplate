@@ -127,11 +127,11 @@ git clone https://github.com/milescl/nextjs-boilerplate
 ```
 
 2. Ingresar desde un terminal, a la carpeta del proyecto en la carpeta mycommerce, e instalar con npm 
-```bash`
+```bash
 cd nextjs-boilerplate/mycommerce
 npm i -D
-``
-3. Cambia el nombre del archivo .env.example, por ```.env```
+```
+3. Cambia el nombre del archivo .env.example, por ``` .env ```
 Desde el archivo, modifica los parámetros de la base de datos. 
 ```
 # MONGODB CREDENTIALS
