@@ -1,8 +1,37 @@
 # nextjs-boilerplate
 Boilerplate for NextJS
+
+# Cómo instalar este proyecto
+## Pre-requisitos
+```bash
+winget install Microsoft.VisualStudioCode OpenJS.NodeJS Git.Git
+```
+
+1. Desde un terminal, clonar por medio de
+```bash
+git clone https://github.com/milescl/nextjs-boilerplate
+```
+
+2. Ingresar desde un terminal, a la carpeta del proyecto en la carpeta mycommerce, e instalar con npm 
+```bash
+cd nextjs-boilerplate/mycommerce
+npm i -D
+```
+3. Cambia el nombre del archivo .env.example, por ``` .env ```
+Desde el archivo, modifica los parámetros de la base de datos. 
+```
+# MONGODB CREDENTIALS
+MONGODB_USERNAME = "USER"
+MONGODB_PASSWORD = "PASSWORD"
+MONGODB_HOST = "cloud.mongodb.example.com"
+MONGODB_PORT = "27017"
+MONGODB_DATABASE = "ecommerce"
+
+```
+NOTA: Las siguientes instrucciones, describe los pasos realizados para construir el presente proyecto. 
+
 **El siguiente documento, asume que ya se tiene los requerimientos por parte del cliente.**
 # Inicio
-
 
 Al momento de realizar una creación tanto de un sistema como para una página web, se debe comenzar generando el concepto de lo que se requiere realizar. 
 Para comenzar, debes crear: 
@@ -118,27 +147,4 @@ Para finalizar, debes instalar el plugin de prettier para eslint, por medio del 
 
 ```dos
 npm install --save-dev eslint-plugin-prettier
-```
-
-# Cómo instalar este proyecto
-1. Desde un terminal, clonar por medio de
-```bash
-git clone https://github.com/milescl/nextjs-boilerplate
-```
-
-2. Ingresar desde un terminal, a la carpeta del proyecto en la carpeta mycommerce, e instalar con npm 
-```bash
-cd nextjs-boilerplate/mycommerce
-npm i -D
-```
-3. Cambia el nombre del archivo .env.example, por ``` .env ```
-Desde el archivo, modifica los parámetros de la base de datos. 
-```
-# MONGODB CREDENTIALS
-MONGODB_USERNAME = "USER"
-MONGODB_PASSWORD = "PASSWORD"
-MONGODB_HOST = "cloud.mongodb.example.com"
-MONGODB_PORT = "27017"
-MONGODB_DATABASE = "ecommerce"
-
 ```
