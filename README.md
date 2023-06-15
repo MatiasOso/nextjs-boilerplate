@@ -26,8 +26,8 @@ git clone https://github.com/milescl/nextjs-boilerplate
 cd nextjs-boilerplate/mycommerce
 npm i -D
 ```
-3. Cambia el nombre del archivo .env.example, por ``` .env ```
-Desde el archivo, modifica los parámetros de la base de datos. 
+3. Desde la carpeta mycommerce, cambia el nombre del archivo .env.example, por ``` .env ```.
+   A continuación, edita el archivo .env, y luego modifica los parámetros de la base de datos. 
 ```
 # MONGODB CREDENTIALS
 MONGODB_USERNAME = "USER"
