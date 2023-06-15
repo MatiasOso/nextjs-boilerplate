@@ -1,6 +1,6 @@
-use('ecommerce');
+use('testcommerce');
 // Crceate new model for Category
-export const category_model = {
+const category_model = {
   _id: ObjectId("5f8b9a7b9b3b3b3b3b3b3b3b"),
   name: 'Electronics',
   description: 'Electronic Items',
@@ -124,7 +124,9 @@ const product_model = {
 
 // Create a new model User
 const user_model = {
-  _id: ObjectId("5f8b9a7b9b3b3b3b3b3b3b4a"),
+  _id: ObjectId("5f8b9a7b9b3b3b4b3b3b3b4a"),
   name: 'John Doe',
   email: 'johndoe@gimail.net'
 };
+
+db.getCollection('products').insertOne(product_model)
