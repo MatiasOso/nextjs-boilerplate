@@ -45,6 +45,12 @@ db.getCollection('products').insertMany[product_model,product_model,product_mode
 ```
 Una vez conectado al servidor, presiona el botón play, del archivo mongodb playground. 
 
+5.- Abre un terminal desde el directorio prisma/mongodb, y elejcuta el siguiente comando
+```bash
+npx prisma db pull
+npx prisma generate
+```
+
 NOTA: Las siguientes instrucciones, describe los pasos realizados para construir el presente proyecto. 
 
 **El siguiente documento, asume que ya se tiene los requerimientos por parte del cliente.**
