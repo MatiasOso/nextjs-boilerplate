@@ -4,7 +4,16 @@ Boilerplate for NextJS
 # Cómo instalar este proyecto
 ## Pre-requisitos
 ```bash
-winget install Microsoft.VisualStudioCode OpenJS.NodeJS Git.Git
+winget install Microsoft.VisualStudioCode 
+winget install OpenJS.NodeJS 
+winget install Git.Git 
+```
+
+Para Linux
+```
+sudo apt install Git
+sudo apt install nodejs
+sudo apt install code
 ```
 
 1. Desde un terminal, clonar por medio de
