@@ -37,6 +37,14 @@ MONGODB_PORT = "27017"
 MONGODB_DATABASE = "ecommerce"
 
 ```
+4. Instala la extensión para mongoDB en VSCode, y posteriormente abre el archivo playground de mongoDB, que se encuentra en la carpeta /database/model.mongodb.js, y modifica el parámetro use de la base de datos. Sobre la línea 1 del archivo, aparecerá un mensaje **"Disconnected. Click here to connect."**, ingresa los parámetros de conexión para mongodb. ej: mongo+srv://asdf@qwerty....
+Dicho archivo, contiene el modelo de producto, usuario y categoría.
+Modifica el archivo, e inserta uno o vario de ellos en la base de datos. Agrega al final del archivo, la instrucción
+```js
+db.getCollection('products').insertMany[product_model,product_model,product_model]
+```
+Una vez conectado al servidor, presiona el botón play, del archivo mongodb playground. 
+
 NOTA: Las siguientes instrucciones, describe los pasos realizados para construir el presente proyecto. 
 
 **El siguiente documento, asume que ya se tiene los requerimientos por parte del cliente.**
