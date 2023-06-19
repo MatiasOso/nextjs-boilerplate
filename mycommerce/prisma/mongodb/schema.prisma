@@ -13,6 +13,12 @@ type CategoriesImages {
   url         String
 }
 
+type CategoryImages {
+  description String
+  kind        String
+  url         String
+}
+
 type ProductsFeatures {
   name  String
   value String
@@ -63,8 +69,22 @@ model categories {
   updatedAt   DateTime           @db.Date
 }
 
+model category {
+  id          String           @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime         @db.Date
+  description String
+  images      CategoryImages[]
+  is_active   Boolean
+  name        String
+  owner       String           @db.ObjectId
+  parent      String           @db.ObjectId
+  tags        String[]
+  updatedAt   DateTime         @db.Date
+}
+
 model products {
   id          String             @id @default(auto()) @map("_id") @db.ObjectId
+  brand       String?
   category    String
   createdAt   DateTime           @db.Date
   description String

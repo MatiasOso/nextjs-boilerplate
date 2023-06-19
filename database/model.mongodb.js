@@ -1,4 +1,5 @@
-use('testcommerce');
+/* global use, db */
+use('ecommerce');
 // Crceate new model for Category
 const category_model = {
   _id: ObjectId("5f8b9a7b9b3b3b3b3b3b3b3b"),
@@ -31,7 +32,7 @@ const category_model = {
     }
   ],
   tags: ['Smartphone', 'Computer', 'Laptop', 'Parts', 'Accessories'],
-  parent: null
+  parent: ObjectId("5f8b9a7b9b3b3b3b3b3b3b3b")
 };
 // Create a sub-category
 const sub_category_model = {
@@ -130,3 +131,4 @@ const user_model = {
 };
 
 db.getCollection('products').insertOne(product_model)
+db.getCollection('category').insertOne(category_model)
