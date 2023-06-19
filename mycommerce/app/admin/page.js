@@ -9,8 +9,26 @@ const Admin = () => {
         const stock = e.target.stock.value
         const description = e.target.description.value
 
-        
+        const product = {
+            "name": name,
+            "brand": brand,
+            "price": price,
+            "stock": stock,
+            "description": description
     }
+    console.log(product)
+    fetch('http://localhost:3000/api/products', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(product)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+    }
+
   return (
     <div>
         <h1>Mantenedor de Productos</h1>
