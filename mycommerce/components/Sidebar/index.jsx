@@ -21,8 +21,8 @@ const category = [
 ]
 const SidebarText = {
   title: "HELLO!",
-  description: "This is a dialog description",
-  body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis perspiciatis vel minus sequi pariatur qui, eaque, veniam, incidunt quaerat nobis eum non aliquam itaque rem quos quas id facere?",
+  description: "Categorías",
+  body: "Category 1, Category 2, Category 3",
 }
 
 export default function Sidebar() {

@@ -9,6 +9,9 @@ export const webcommerceApi = createApi({
     getCategoryByName: builder.query({
       query: (name) => `product/${name}`,
     }),
+    getProduct: builder.query({
+      query: (name) => `product/`,
+    }),
     getCategory: builder.query({
         query: () => `category`,
     }),
@@ -17,4 +20,4 @@ export const webcommerceApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetCategoryByNameQuery, useGetCategoryQuery } = webcommerceApi
+export const { useGetCategoryByNameQuery, useGetCategoryQuery, useGetProductQuery } = webcommerceApi

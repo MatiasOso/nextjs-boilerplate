@@ -1,5 +1,5 @@
 
-import { useGetCategoryQuery } from '@/store/services/webcommerceApi'
+import { useGetProductQuery } from '@/store/services/webcommerceApi'
 import Rating from '@/components/Rating'
 const products = [
     {
@@ -42,7 +42,7 @@ const products = [
   ]
 
   export const Product = () => {
-    const { data , error, isLoading } = useGetCategoryQuery();
+    const { data , error, isLoading } = useGetProductQuery();
     return (
       <div className="bg-white">
         {
