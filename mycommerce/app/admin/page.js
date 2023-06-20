@@ -33,6 +33,7 @@ const Admin = () => {
     <div>
         <h1>Mantenedor de Productos</h1>
         <form onSubmit={handleSubmit}>
+            
             <input type="text" id="name" placeholder='Escriba el nombre del Producto' />
             <br/>
             <input type="text" id="brand" placeholder='Marca' />
