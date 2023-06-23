@@ -1,6 +1,19 @@
 'use client';
+import {useState} from 'react'
 
 const Admin = () => {
+    const [files, setFiles] = useState([])
+    const deleteImage = (index) => {
+        setFiles(oldValues => {
+            return oldValues.filter((_, i) => i !== index)
+          })
+    }
+    const handleFileChange = (e) => {
+        for (const file of e.target.files) {
+            setFiles([...files, file])
+        }
+        console.log(files)
+    }
     const handleSubmit = (e) => {
         e.preventDefault()
         const name = e.target.name.value
@@ -15,9 +28,8 @@ const Admin = () => {
         formData.append('price', price);
         formData.append('stock', stock);
         formData.append('description', description);
-        for (const file of e.target.image.files) {
-            formData.append(file.name, file);
-        }
+        formData.append('files', files);
+
         fetch('http://127.0.0.1:3000/api/v1/product', {
             body: (formData),
             method: 'POST',
@@ -52,7 +64,19 @@ const Admin = () => {
                         <label htmlFor="description" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
                     </div>
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="image">Upload file</label>
-                    <input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="image" type="file" />
+                    <input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" onChange={handleFileChange} aria-describedby="user_avatar_help" id="images" type="file" multiple/>
+                    <output>
+                        {files && Array.from(files).map((file, index) => (
+                            <div key={index} className="flex items-center mt-2">
+                                <span className='hover:bg-blue-200' onClick={()=> deleteImage(index)} >&times;Delete</span>
+                                <img className="w-10 h-10 rounded-full mr-4" src={URL.createObjectURL(file)} alt="Avatar Upload" />
+                                <div className="flex-1">
+                                    <h2 className="text-sm font-medium text-gray-900 dark:text-white">{file.name}</h2>
+                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{file.size} bytes</p>
+                                </div>
+                            </div>
+                        ))}
+                    </output>
                     <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Product</button>
 
             </form>

@@ -25,7 +25,8 @@ export async function GET() {
 // Here receive form-data from client as POST request
 export async function POST(req) {
   const formData = await req.formData();
-  console.log("POST", formData);
+  const body = Object.fromEntries(formData.entries());
+  console.log("POST", body.files);
 
   return NextResponse.json({
     message: "Fake implemented",
