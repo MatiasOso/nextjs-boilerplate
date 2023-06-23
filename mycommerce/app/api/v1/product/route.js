@@ -1,7 +1,7 @@
 import { getProduct, insertRandomProducts } from "@/lib/dbMySQL";
 
 import { NextResponse, NextRequest } from "next/server";
-import formidable, {errors as formidableErrors} from "formidable";
+
 
 export const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
