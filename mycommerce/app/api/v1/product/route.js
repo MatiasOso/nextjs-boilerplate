@@ -1,35 +1,33 @@
-import {getProduct, insertRandomProducts} from '@/lib/dbMySQL'
+import { getProduct, insertRandomProducts } from "@/lib/dbMySQL";
 
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from "next/server";
+import formidable, {errors as formidableErrors} from "formidable";
 
 export const corsHeaders = {
-   "Access-Control-Allow-Origin": "*",
-   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-   "Access-Control-Allow-Headers": "Content-Type, Authorization",
- };
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
 
 export async function OPTIONS() {
-   return NextResponse.json({}, { headers: corsHeaders });
+  return NextResponse.json({}, { headers: corsHeaders });
 }
 export async function GET() {
-  const results = await getProduct().catch(e => {
+  const results = await getProduct().catch((e) => {
     console.log(e);
     return [];
-    });
- return NextResponse.json({
-    message: 'Products',
-    data: results
-});
+  });
+  return NextResponse.json({
+    message: "Products",
+    data: results,
+  });
 }
+// Here receive form-data from client as POST request
 export async function POST(req) {
-   console.log(JSON.stringify(req.body));
-   // const results = await insertRandomProducts().catch(e => {
-   //    console.log(e);
-   //    return [];
-   //    });
-   const results = JSON.stringify(req.body)
- return NextResponse.json({
-    message: 'Fake implemented',
-    data: results
-});
+  const formData = await req.formData();
+  console.log("POST", formData);
+
+  return NextResponse.json({
+    message: "Fake implemented",
+  });
 }
