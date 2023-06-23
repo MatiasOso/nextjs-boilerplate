@@ -18,8 +18,8 @@ const Admin = () => {
         e.preventDefault()
         const name = e.target.name.value
         const brand = e.target.brand.value
-        const price = e.target.price.value
-        const stock = e.target.stock.value
+        const price = (e.target.price.value)
+        const stock = (e.target.stock.value)
         const description = e.target.description.value
 
         const formData = new FormData();
