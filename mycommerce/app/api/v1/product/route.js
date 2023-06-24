@@ -33,9 +33,12 @@ export async function POST(req) {
     description: body.description,
     images: [],
     category: '',
-    physical: { color:'', size: '', weight: 0, dimensions : {width: 0, height: 0, length: 0} },
+    physical: { color:'', size: '', weight: {unit:"", value:0.0 }, dimensions : {width: 0.0, height: 0.0, length: 0.0, unit:""} },
     createdAt: new Date(),
     updatedAt: new Date(),
+    is_active: true,
+    owner: '6d795f757365725f69643030',
+    stock: 100
   };
 
   const results = await postProduct(product).catch((e) => {
