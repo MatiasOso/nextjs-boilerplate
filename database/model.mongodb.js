@@ -125,10 +125,13 @@ const product_model = {
 
 // Create a new model User
 const user_model = {
-  _id: ObjectId("5f8b9a7b9b3b3b4b3b3b3b4a"),
+  _id: ObjectId("5f8b9a7b9b3b3b4b3b3b3b4c"),
   name: 'John Doe',
-  email: 'johndoe@gimail.net'
+  email: 'johndoe@gimail.net',
+  profile: 'admin',
+  password: '123456',
 };
 
+db.getCollection('users').insertOne(user_model)
 db.getCollection('products').insertOne(product_model)
 db.getCollection('category').insertOne(category_model)

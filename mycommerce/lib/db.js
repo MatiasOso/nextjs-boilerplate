@@ -1,6 +1,24 @@
 import { PrismaClient } from '@prisma/client'
 //import { faker } from '@faker-js/faker';
+
 const prisma = new PrismaClient()
+
+export const getUser = async (data) => {
+    try {
+        console.log("PRISMA ACCEDIENDO A users ",data)
+        const allElement = await prisma.users.findFirst({ where: { email: data.username } })
+        await prisma.$disconnect()
+        console.log(allElement)
+        return allElement
+    } catch (error) {
+        console.error(error)
+        await prisma.$disconnect()
+        process.exit(1)
+    } finally {
+        await prisma.$disconnect()
+    }
+}
+
 export const getCategory = async () => {
 
     // ... you will write your Prisma Client queries here

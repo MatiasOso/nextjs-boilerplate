@@ -94,9 +94,19 @@ model products {
   name        String
   owner       String             @db.ObjectId
   physical    ProductsPhysical
+  /// Multiple data types found: Int: 35.3%, BigInt: 64.7% out of 17 sampled entries
   price       Int
   reviews     ProductsReviews[]
+  /// Multiple data types found: Int: 35.3%, BigInt: 64.7% out of 17 sampled entries
   stock       Int
   tags        String[]
   updatedAt   DateTime           @db.Date
+}
+
+model users {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  email    String
+  name     String
+  password String
+  profile  String
 }

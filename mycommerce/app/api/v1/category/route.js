@@ -1,4 +1,4 @@
-import {getCategory} from '@/lib/dbMySQL'
+import {getCategory} from '@/lib/db'
 
 import { NextResponse } from 'next/server';
  
