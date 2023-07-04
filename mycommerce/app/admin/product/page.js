@@ -33,7 +33,7 @@ const Admin = () => {
         formData.append('images', file);
         }
 
-        fetch('http://127.0.0.1:3000/api/v1/product', {
+        fetch('http://localhost:3000/api/v1/product', {
             body: (formData),
             method: 'POST',
             headers: {
