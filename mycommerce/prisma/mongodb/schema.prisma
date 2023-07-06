@@ -13,12 +13,6 @@ type CategoriesImages {
   url         String
 }
 
-type CategoryImages {
-  description String
-  kind        String
-  url         String
-}
-
 type ProductsFeatures {
   name  String
   value String

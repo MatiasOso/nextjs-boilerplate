@@ -58,7 +58,12 @@ export const POST = async (req) => {
     // Write image file to public/assets folder
     const file = join(process.cwd(), "public", "assets", "images", fileName); // Get file path
     await fs.promises.writeFile(file, bufferFile); // Write file in public/assets/images folder
-    savedFiles.push(fileName);
+    const db_image = {
+      description : "Imagen Producto",
+      kind      :  "Product",
+      url : fileName
+    }
+    savedFiles.push(db_image);
   }
   product_data.images = savedFiles;
   console.log("TO SAVE POST", product_data); // Log product data
