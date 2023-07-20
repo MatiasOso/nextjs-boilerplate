@@ -14,7 +14,7 @@ const Login = () => {
     }
 
   return (
-    <button onClick={() => signIn()}>Sign in INGRESAR</button>
+    <button onClick={() => signIn()}>Ingresar</button>
   )
 }
 

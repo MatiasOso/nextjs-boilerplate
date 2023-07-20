@@ -7,100 +7,148 @@ datasource db {
   url      = env("DATABASE_URL_MONGODB")
 }
 
-type CategoriesImages {
-  description String
-  kind        String
-  url         String
+type Bebidas0 {
+  id           String? @map("_id") @db.ObjectId
+  cantidad     Int
+  descripcion  String
+  elaboracion  String
+  gramaje      String
+  nombre       String
+  precio_costo Int
+  precio_venta Int
+  vencimiento  String
 }
 
-type ProductsFeatures {
+type ExperimentoFeatures {
   name  String
   value String
 }
 
-type ProductsImages {
+type ExperimentoImages {
   description String
   kind        String
   url         String
 }
 
-type ProductsPhysical {
+type ExperimentoPhysical {
   color      String
-  dimensions ProductsPhysicalDimensions
+  dimensions ExperimentoPhysicalDimensions
   size       String
-  weight     ProductsPhysicalWeight
+  weight     ExperimentoPhysicalWeight
 }
 
-type ProductsPhysicalDimensions {
+type ExperimentoPhysicalDimensions {
   height Float
   length Float
   unit   String
   width  Float
 }
 
-type ProductsPhysicalWeight {
+type ExperimentoPhysicalWeight {
   unit  String
   value Float
 }
 
-type ProductsReviews {
+type ExperimentoReviews {
   comment   String
   createdAt DateTime @db.Date
   stars     Int
   userId    String   @db.ObjectId
 }
 
-model categories {
-  id          String             @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt   DateTime           @db.Date
-  description String
-  images      CategoriesImages[]
-  is_active   Boolean
-  name        String
-  owner       String             @db.ObjectId
-  parent      String?            @db.ObjectId
-  tags        String[]
-  updatedAt   DateTime           @db.Date
+model Bebidas {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 0 Bebidas0? @map("0")
+  cantidad     Int?
+  descripcion  String?
+  elaboracion  String?
+  gramaje      String?
+  nombre       String?
+  precio_costo Int?
+  precio_venta Int?
+  vencimiento  String?
 }
 
-model category {
-  id          String           @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt   DateTime         @db.Date
-  description String
-  images      CategoryImages[]
-  is_active   Boolean
-  name        String
-  owner       String           @db.ObjectId
-  parent      String           @db.ObjectId
-  tags        String[]
-  updatedAt   DateTime         @db.Date
+model Category {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 }
 
-model products {
-  id          String             @id @default(auto()) @map("_id") @db.ObjectId
+model Chocolates {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  cantidad     Int
+  descripcion  String
+  elaboracion  String
+  gramaje      String
+  nombre       String
+  precio_costo Int
+  precio_venta Int
+  url          String
+  vencimiento  String
+}
+
+model Experimento {
+  id          String                @id @default(auto()) @map("_id") @db.ObjectId
   brand       String?
-  category    String
-  createdAt   DateTime           @db.Date
-  description String
-  features    ProductsFeatures[]
-  images      ProductsImages[]
-  is_active   Boolean
+  category    String?
+  createdAt   DateTime?             @db.Date
+  description String?
+  email       String?
+  features    ExperimentoFeatures[]
+  images      ExperimentoImages[]
+  is_active   Boolean?
   name        String
-  owner       String             @db.ObjectId
-  physical    ProductsPhysical
-  /// Multiple data types found: Int: 35.3%, BigInt: 64.7% out of 17 sampled entries
-  price       Int
-  reviews     ProductsReviews[]
-  /// Multiple data types found: Int: 35.3%, BigInt: 64.7% out of 17 sampled entries
-  stock       Int
+  owner       String?               @db.ObjectId
+  parent      String?               @db.ObjectId
+  password    String?
+  physical    ExperimentoPhysical?
+  price       Int?
+  profile     String?
+  reviews     ExperimentoReviews[]
+  stock       Int?
   tags        String[]
-  updatedAt   DateTime           @db.Date
+  updatedAt   DateTime?             @db.Date
 }
 
-model users {
+model Galletas {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  cantidad     Int
+  descripcion  String
+  elaboracion  String
+  gramaje      String
+  nombre       String
+  precio_costo Int
+  precio_venta Int
+  vencimiento  String
+}
+
+model Gomitas {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  cantidad     Int
+  descripcion  String
+  elaboracion  String
+  gramaje      String
+  nombre       String
+  precio_costo Int
+  precio_venta Int
+  vencimiento  String
+}
+
+model Helados {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  cantidad     Int
+  descripcion  String
+  elaboracion  String
+  gramaje      String
+  nombre       String
+  precio_costo Int
+  precio_venta Int
+  vencimiento  String
+}
+
+model Usuarios {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   email    String
   name     String
   password String
-  profile  String
 }

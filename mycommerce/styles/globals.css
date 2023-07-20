@@ -7,3 +7,50 @@
   justify-content: center;
   align-items: center;
 }
+
+#logoprincipal{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#completo{
+  background-color: #FFF0C9;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+*{
+/* RED HITBOX FOR EVERY ITEM */
+   outline: 1px solid red
+}
+
+#paleta{
+  background-color: #FFF0C9;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-left: 45em;
+}
+section{
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+section img{
+  width: 190px;
+  flex-grow: 1;
+  object-fit:cover;
+  opacity: .8;
+  transition: all 1s ease;
+}
+section img:hover{
+  width: 15%;
+  opacity: 1;
+  filter: contrast(120%);
+}

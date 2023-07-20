@@ -1,12 +1,15 @@
 import { PrismaClient } from '@prisma/client'
 //import { faker } from '@faker-js/faker';
 
+// Okey aqui mas abajo esta para buscar los chocolates (productos, en realidad no son chocolates pero no iba a buscar varias colecciones para unos pocos resultados ;) )
+
 const prisma = new PrismaClient()
 
 export const getUser = async (data) => {
     try {
         console.log("PRISMA ACCEDIENDO A users ",data)
-        const allElement = await prisma.users.findFirst({ where: { email: data.username } })
+        // const allElement = await prisma.Usuarios.findFirst({ where: { email: data.username } })
+        const allElement = await prisma.usuarios.findMany({})
         await prisma.$disconnect()
         console.log(allElement)
         return allElement
@@ -40,7 +43,7 @@ export const getProduct = async () => {
 
     // ... you will write your Prisma Client queries here
     try {
-        const allElement = await prisma.products.findMany()
+        const allElement = await prisma.Chocolates.findMany()
         await prisma.$disconnect()
         console.log(allElement)
         return allElement
@@ -72,6 +75,21 @@ export const postProduct = async (data) => {
         }
     
     }
+export const postUser = async (body) => {
+        try {
+        const respuesta = await prisma.usuarios.create({
+            data: body, 
+        });
+        await prisma.$disconnect();
+        return respuesta;   
+    }   catch (error) {
+        console.error(error)
+        await prisma.$disconnect()
+        process.exit(1)
+    } finally {
+        await prisma.$disconnect()
+    }
+}
 /*
 
     const generateRandomProduct = () => {

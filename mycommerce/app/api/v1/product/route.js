@@ -10,6 +10,7 @@ import fs from "fs";
 import { NextResponse, NextRequest } from "next/server";
 import { getProduct, postProduct } from "@/lib/db";
 import Product from "@/sections/Product";
+// Creo que esto es solo para imagenes :L
 
 export const GET = async () => {
   const results = await getProduct().catch((e) => {
@@ -53,7 +54,7 @@ export const POST = async (req) => {
     // Check if bufferFile is a valid image, reading the first bytes of the file
     const bufferFileHeader = bufferFile.subarray(0, 4).toString("hex"); // Get first 4 bytes of the file
     if (bufferFileHeader !== "ffd8ffe0" && bufferFileHeader !== "ffd8ffe1") { // Check if bufferFile is a valid image
-      return NextResponse.json({ error: "Only JPEG/JPG files allowed. Dont rename files extensions hacker ;) : " + image.filename }, { status: 415 });
+      return NextResponse.json({ error: "Only JPEG/JPG files allowed. Dont rename files extensions hacker ;)  :O: " + image.filename }, { status: 415 });
     }
     // Write image file to public/assets folder
     const file = join(process.cwd(), "public", "assets", "images", fileName); // Get file path

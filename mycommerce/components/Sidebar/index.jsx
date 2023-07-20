@@ -30,9 +30,9 @@ export default function Sidebar() {
   const dispatch = useDispatch();
   const cancelButtonRef = useRef();
   return (
-    <Dialog as="div" className="bg-red-50 fixed left-0 top-0 bottom-0 w-64 z-10" open={isOpen} onClose={() => dispatch(toggleMenu())}>
-      <Dialog.Panel className="bg-blue-200">
-        <Dialog.Title className="bg-green-30">{SidebarText.title} <XMarkIcon className="w-6" onClick={() => dispatch(toggleMenu())}/></Dialog.Title>
+    <Dialog as="div" className="bg-marino text-crema fixed left-0 top-0 bottom-0 w-64 z-10" open={isOpen} onClose={() => dispatch(toggleMenu())}>
+      <Dialog.Panel className="bg-marino">
+        <Dialog.Title className="bg-marino">{SidebarText.title} <XMarkIcon className="w-6" onClick={() => dispatch(toggleMenu())}/></Dialog.Title>
         <Dialog.Description>
           {SidebarText.description}
         </Dialog.Description>

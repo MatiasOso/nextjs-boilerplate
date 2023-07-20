@@ -7,7 +7,7 @@ const Menu = () => {
     <Popover className="relative">
       <Popover.Button>
         <div className='flex flex-col centered-middle m-2'>
-          <div className='centered-middle p-2 rounded-full bg-green-200 hover:bg-pink-100'>
+          <div className='centered-middle p-2 rounded-full bg-marino hover:bg-pink-100'>
             <Bars3 />
           </div>
           <span>Menu</span>

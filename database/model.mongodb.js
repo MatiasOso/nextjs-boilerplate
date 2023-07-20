@@ -132,6 +132,8 @@ const user_model = {
   password: '123456',
 };
 
-db.getCollection('users').insertOne(user_model)
-db.getCollection('products').insertOne(product_model)
-db.getCollection('category').insertOne(category_model)
+db.getCollection('Experimento').insertOne(user_model)
+db.getCollection('Experimento').insertOne(product_model)
+db.getCollection('Experimento').insertOne(category_model)
+
+// Funciona

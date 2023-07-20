@@ -1,11 +1,10 @@
 'use client';
-
 import Header from './Header'
 import Footer from './Footer'
 import Product from './Product'
-import Card from '@/components/Card'
 import Cart from '@/components/Cart'
 import Sidebar from '@/components/Sidebar'
+import Main from './Main'
 export function Layout() {
 
 
@@ -13,18 +12,9 @@ export function Layout() {
         <>
         <Sidebar></Sidebar>
                 <Header/>
-                <main>
                     <Cart />
-                    <Product />
-                    <div className='flex flex-row'>
-                        <Card>ESTO ES UNA TARJETA</Card>
-                        <Card>ESTO ES UNA TARJETA</Card>
-                        <Card>ESTO ES UNA TARJETA</Card>
-                        <Card>ESTO ES UNA TARJETA</Card>
-                        <Card>ESTO ES UNA TARJETA</Card>
-                    </div>
-
-                </main>
+                    {/* <Product /> */}
+                    <Main />
                 <Footer />
         </>
     )

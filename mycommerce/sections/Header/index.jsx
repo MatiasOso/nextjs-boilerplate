@@ -4,10 +4,10 @@ import Search from '@/components/Search'
 import NavButtons from '../NavButtons'
 const styles = {
   header: 'flex flex-row',
-  logo: 'w-1/8 bg-green-200',
-  menu: 'w-1/8 bg-blue-200 centered-middle',
-  search: 'w-full bg-red-100 centered-middle',
-  buttons: 'w-1/5 bg-yellow-200 centered-middle',
+  logo: 'w-1/8 bg-marino',
+  menu: 'w-1/8 bg-marino centered-middle',
+  search: 'w-full bg-marino',
+  buttons: 'w-1/5 bg-marino centered-middle',
 }
 
 const index = () => {

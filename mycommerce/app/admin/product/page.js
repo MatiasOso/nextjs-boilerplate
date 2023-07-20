@@ -1,8 +1,8 @@
 'use client';
 import {useState} from 'react'
-
-const Admin = () => {
-    const [files, setFiles] = useState([])
+// CREO QUE AQUI SE CREAN LOS PRODUCTOS UNA VEZ HECHA LA CONFIGUARACION A LA BASE DE DATOAS DARLE DISEÑO ;)
+const Admin = () => { 
+    const [files, setFiles] = useState([]) 
     const deleteImage = (index) => {
         setFiles(oldValues => {
             return oldValues.filter((_, i) => i !== index)
@@ -47,10 +47,10 @@ const Admin = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container bg-crema">
             <h1>Mantenedor de Productos</h1>
             <form onSubmit={handleSubmit} encType='multipart/form-data' method='POST'>
-                    <div className="relative z-0 w-full mb-6 group">
+                    <div className="relative z-0 w-full mb-6 group text-crema">
                         <input type="text" name="name" id="name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                         <label htmlFor="name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Product Name</label>
                     </div>
@@ -75,7 +75,7 @@ const Admin = () => {
                     <output>
                         {files && Array.from(files).map((file, index) => (
                             <div key={index} className="flex items-center mt-2">
-                                <span className='hover:bg-blue-200' onClick={()=> deleteImage(index)} >&times;Delete</span>
+                                <span className='hover:bg-blue-200' onClick={()=> deleteImage(index)} >&times;Delete</span> 
                                 <img className="w-10 h-10 rounded-full mr-4" src={URL.createObjectURL(file)} alt="Avatar Upload" />
                                 <div className="flex-1">
                                     <h2 className="text-sm font-medium text-gray-900 dark:text-white">{file.name}</h2>

@@ -3,8 +3,9 @@ import { Montserrat } from 'next/font/google'
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'ECommerce by Miles',
+  title: 'MDG',
   description: 'Website for ECommerce designed and developed by miles.cl',
+  Image: '/logo.png',
 }
 
 export default function RootLayout({ children }) {
